@@ -11,7 +11,9 @@ class FANPluginFactory: NSObject {
         channel = _channel
         
         super.init()
-        
+
+        AppEventsLogger.log("custom_init");
+
         channel.setMethodCallHandler { (_ call : FlutterMethodCall, result : @escaping FlutterResult) in
             switch call.method{
             case "init":
